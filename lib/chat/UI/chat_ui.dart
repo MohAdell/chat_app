@@ -38,6 +38,11 @@ class ChatScreen extends StatelessWidget {
               isMeChatting: true,
               massageBody: 'I am fine',
             ),
+            ChatMassageTest(
+              isMeChatting: false,
+              massageBody:
+                  'تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة تجربة',
+            ),
             Expanded(child: Container()),
             Row(
               children: [

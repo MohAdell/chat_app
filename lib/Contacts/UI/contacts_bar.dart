@@ -12,13 +12,13 @@ class ContactsNavigationBarUi extends StatefulWidget {
 }
 
 class _ContactsNavigationBarUiState extends State<ContactsNavigationBarUi> {
-  reloadedcontacts() {
-    context.read<UsersCubit>().fetchAlluserWithoutme();
-  }
+  // reloadedcontacts() {
+  //   context.read<UsersCubit>().fetchAlluserWithoutme();
+  // }
 
   @override
   void initState() {
-    reloadedcontacts();
+    // reloadedcontacts();
     super.initState();
   }
 

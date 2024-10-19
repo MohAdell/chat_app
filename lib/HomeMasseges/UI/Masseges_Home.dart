@@ -44,7 +44,7 @@ class UserCard extends StatelessWidget {
                         child: Text(
                           userProfile.name[0].toUpperCase(),
                           style: TextStyle(
-                            color: Colors.green,
+                            color: Colors.white,
                             fontSize: 24,
                           ),
                         ),

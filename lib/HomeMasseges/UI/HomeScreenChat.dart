@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../Contacts/logic/rooms_cubit.dart';
+import '../../Profile/UI/user_profile_ui.dart';
 import '../../Profile/logic/users_cubit.dart';
 import '../../firebase/firebase_data.dart';
 import '../../utils/routes.dart';
@@ -57,7 +58,10 @@ class _HomeScreenState extends State<HomeScreenChat> {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => UserProfileUi()));
+                },
                 icon: Icon(Icons.settings),
               ),
             ],
