@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../Profile/model/users_info.dart';
-import '../../UI/chat_ui.dart';
 import '../../firebase/firebase_data.dart';
 import '../model/chat_model.dart';
 
@@ -195,19 +194,9 @@ class ChatScreen extends StatelessWidget {
               ],
             ),
           ),
-
-          // Text(
-          //   "Last Seen ${Styles.getLastActiveTime(userProfile.lastActivated)}",
-          //   style: Theme.of(context).textTheme.labelLarge,
-          // ),
         ],
       ),
       actions: [
-        // IconButton(
-        //   onPressed: () {},
-        //   icon:
-        //       const Icon(Icons.accessibility_new_outlined, color: Colors.cyan),
-        // ),
         Padding(
           padding: EdgeInsets.only(right: 10),
           child: Icon(

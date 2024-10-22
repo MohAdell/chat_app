@@ -41,7 +41,7 @@ class _SecondSplashScreenState extends State<SecondSplashScreen> {
                 'quickly',
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 80,
+                    fontSize: 60,
                     fontWeight: FontWeight.w300,
                     fontFamily: 'Poppins'),
               ),

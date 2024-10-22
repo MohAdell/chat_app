@@ -262,47 +262,47 @@ class _SigninUiState extends State<SigninUi> {
                               ),
                             ),
                           ),
-                          BlocBuilder<LoginCubit, LoginState>(
-                            builder: (context, state) {
-                              if (state is LoginLoading) {
-                                return const Center(
-                                    child: CircularProgressIndicator());
-                              }
-                              return TextButton(
-                                onPressed: () {
-                                  final formKey =
-                                      context.read<LoginCubit>().formKey;
-                                  if (formKey.currentState != null &&
-                                      formKey.currentState!.validate()) {
-                                    context.read<LoginCubit>().login();
-                                  }
-                                },
-                                child: Container(
-                                  height: 50.0,
-                                  width: 350,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      begin: Alignment.centerLeft,
-                                      end: Alignment.centerRight,
-                                      colors: [Colors.black, Color(0xff3D4A7A)],
-                                    ),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(10.0)),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'Login',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
-                                          fontFamily: 'Poppins',
-                                          fontSize: 19.0),
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
+                          // BlocBuilder<LoginCubit, LoginState>(
+                          //   builder: (context, state) {
+                          //     if (state is LoginLoading) {
+                          //       return const Center(
+                          //           child: CircularProgressIndicator());
+                          //     }
+                          //     return TextButton(
+                          //       onPressed: () {
+                          //         final formKey =
+                          //             context.read<LoginCubit>().formKey;
+                          //         if (formKey.currentState != null &&
+                          //             formKey.currentState!.validate()) {
+                          //           context.read<LoginCubit>().login();
+                          //         }
+                          //       },
+                          //       child: Container(
+                          //         height: 50.0,
+                          //         width: 350,
+                          //         decoration: BoxDecoration(
+                          //           gradient: LinearGradient(
+                          //             begin: Alignment.centerLeft,
+                          //             end: Alignment.centerRight,
+                          //             colors: [Colors.black, Color(0xff3D4A7A)],
+                          //           ),
+                          //           borderRadius:
+                          //               BorderRadius.all(Radius.circular(10.0)),
+                          //         ),
+                          //         child: Center(
+                          //           child: Text(
+                          //             'Login',
+                          //             style: TextStyle(
+                          //                 fontWeight: FontWeight.bold,
+                          //                 color: Colors.white,
+                          //                 fontFamily: 'Poppins',
+                          //                 fontSize: 19.0),
+                          //           ),
+                          //         ),
+                          //       ),
+                          //     );
+                          //   },
+                          // ),
                           SizedBox(
                             height: 15,
                           ),
