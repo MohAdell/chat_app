@@ -1,13 +1,17 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import '../../firebase/firebase_sevice.dart';
+import '../../UI/home_ui.dart';
+import '../../core/firebase/firebase_sevice.dart';
+import '../UI/signin_ui.dart';
 import '../model/login_model.dart';
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final FirebaseService _auth;
+  final FirebaseAuth authhhh = FirebaseAuth.instance;
   LoginCubit(this._auth) : super(LoginInitial());
 
   TextEditingController email = TextEditingController();
@@ -15,7 +19,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  Future login() async {
+  Future login(context) async {
     if (!formKey.currentState!.validate()) {
       emit(LoginFeliuer('Please fill in all fields correctly.'));
       return;
@@ -29,6 +33,10 @@ class LoginCubit extends Cubit<LoginState> {
 
       if (user != null) {
         emit(LoginSuces(user));
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => HomeUi()),
+        );
       } else {
         emit(LoginFeliuer("login is feluier"));
       }
@@ -37,7 +45,7 @@ class LoginCubit extends Cubit<LoginState> {
     }
   }
 
-  Future<void> loginWithGoogle() async {
+  Future<void> loginWithGoogle(context) async {
     emit(LoginLoading()); // Emit loading state
     try {
       // Attempt to log in using Google Sign-In
@@ -46,6 +54,8 @@ class LoginCubit extends Cubit<LoginState> {
       if (user != null) {
         // If login is successful, emit the success state
         emit(LoginSuces(user));
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => HomeUi()));
       } else {
         // Emit failure state if user cancels or login fails
         emit(LoginFeliuer("Google login was canceled or failed."));
@@ -54,6 +64,12 @@ class LoginCubit extends Cubit<LoginState> {
       // Emit failure state if there is an error
       emit(LoginFeliuer("Google login error: $e"));
     }
+  }
+
+  Future logout(context) async {
+    await authhhh.signOut().then((value) => Navigator.of(context)
+        .pushAndRemoveUntil(MaterialPageRoute(builder: (context) => SigninUi()),
+            (route) => false));
   }
 
   @override

@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 import '../../Contacts/model/roomModel.dart';
 import '../../Profile/model/users_info.dart';
-import '../../utils/routes.dart';
+import '../../core/utils/routes.dart';
 
 class UserCard extends StatelessWidget {
   final UserProfile userProfile;

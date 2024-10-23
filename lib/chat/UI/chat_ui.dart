@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../Profile/model/users_info.dart';
-import '../../firebase/firebase_data.dart';
-import '../model/chat_model.dart';
 
 class ChatScreen extends StatelessWidget {
   final UserProfile userProfile;
@@ -223,49 +221,49 @@ class ChatScreen extends StatelessWidget {
   }
 }
 
-class ChatMessageCard extends StatelessWidget {
-  final Message messageItem;
-
-  ChatMessageCard({required this.messageItem});
-
-  @override
-  Widget build(BuildContext context) {
-    final bool isMe = messageItem.fromId == FireBaseDataAll().myUid;
-
-    return Row(
-      mainAxisAlignment: isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
-      children: [
-        Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              bottomLeft: isMe ? const Radius.circular(16) : Radius.zero,
-              bottomRight: isMe ? Radius.zero : const Radius.circular(16),
-              topLeft: const Radius.circular(16),
-              topRight: const Radius.circular(16),
-            ),
-          ),
-          color: isMe ? Colors.green.shade200 : Colors.green.shade700,
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Text(messageItem.msg),
-                const SizedBox(height: 5),
-                Text(
-                  DateFormat.jm().format(
-                    DateTime.parse(messageItem.createdAt),
-                  ),
-                  style: Theme.of(context).textTheme.labelSmall,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
+// class ChatMessageCard extends StatelessWidget {
+//   final Message messageItem;
+//
+//   ChatMessageCard({required this.messageItem});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     final bool isMe = messageItem.fromId == FireBaseDataAll().myUid;
+//
+//     return Row(
+//       mainAxisAlignment: isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
+//       children: [
+//         Card(
+//           shape: RoundedRectangleBorder(
+//             borderRadius: BorderRadius.only(
+//               bottomLeft: isMe ? const Radius.circular(16) : Radius.zero,
+//               bottomRight: isMe ? Radius.zero : const Radius.circular(16),
+//               topLeft: const Radius.circular(16),
+//               topRight: const Radius.circular(16),
+//             ),
+//           ),
+//           color: isMe ? Colors.green.shade200 : Colors.green.shade700,
+//           child: Padding(
+//             padding: const EdgeInsets.all(12.0),
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 // Text(messageItem.msg),
+//                 const SizedBox(height: 5),
+//                 Text(
+//                   DateFormat.jm().format(
+//                     DateTime.parse(messageItem.createdAt),
+//                   ),
+//                   style: Theme.of(context).textTheme.labelSmall,
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+// }
 
 class ChatMassageTest extends StatelessWidget {
   final bool isMeChatting;

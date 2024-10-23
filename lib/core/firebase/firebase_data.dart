@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../Contacts/model/roomModel.dart';
-import '../Profile/model/users_info.dart';
+import '../../Contacts/model/roomModel.dart';
+import '../../Profile/model/users_info.dart';
 
 class FireBaseDataAll {
   final FirebaseFirestore _firestor = FirebaseFirestore.instance;

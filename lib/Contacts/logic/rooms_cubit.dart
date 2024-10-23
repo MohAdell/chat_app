@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
 import '../../Profile/model/users_info.dart';
-import '../../firebase/firebase_data.dart';
+import '../../core/firebase/firebase_data.dart';
 import '../model/roomModel.dart';
 
 part 'rooms_state.dart';

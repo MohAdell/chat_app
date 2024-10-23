@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../Sign In/logic/login_cubit.dart';
 import '../model/users_info.dart';
 import 'Personal_Profile_Ui.dart';
 
@@ -133,10 +135,16 @@ class _UserProfileUiState extends State<UserProfileUi> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(15),
+                    gradient: LinearGradient(
+                        colors: [Colors.blue.shade100, Colors.blue.shade400],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight),
+                    borderRadius: BorderRadius.circular(25),
                     boxShadow: [
-                      BoxShadow(color: Colors.blue.shade400, blurRadius: 2)
+                      BoxShadow(
+                          color: Colors.blue,
+                          blurRadius: 2,
+                          offset: Offset(0, 2))
                     ]),
                 child: Column(
                   children: [
@@ -148,6 +156,40 @@ class _UserProfileUiState extends State<UserProfileUi> {
                           color: Colors.black),
                     )
                   ],
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              InkWell(
+                onTap: () {
+                  context.read<LoginCubit>().logout(context);
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [Colors.red.shade100, Colors.red.shade400],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight),
+                      borderRadius: BorderRadius.circular(25),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.blue,
+                            blurRadius: 2,
+                            offset: Offset(0, 2))
+                      ]),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Logout',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black),
+                      )
+                    ],
+                  ),
                 ),
               )
             ],

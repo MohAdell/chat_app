@@ -4,11 +4,11 @@ import 'package:chat/register/ui/signup_ui.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../Contacts/UI/contacts_ui.dart';
-import '../Profile/model/users_info.dart';
-import '../UI/second_splash_screen.dart';
-import '../UI/splash_screen.dart';
-import '../chat/UI/chat_ui.dart';
+import '../../Contacts/UI/contacts_ui.dart';
+import '../../Profile/model/users_info.dart';
+import '../../UI/second_splash_screen.dart';
+import '../../UI/splash_screen.dart';
+import '../../chat/UI/chat_ui.dart';
 
 class Routes {
   static const String splashScreen = '/splashscreen';

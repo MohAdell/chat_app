@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../firebase/firebase_data.dart';
+import '../../core/firebase/firebase_data.dart';
 import '../model/users_info.dart';
 
 part 'users_state.dart';

@@ -1,12 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../firebase/firebase_sevice.dart';
-import '../../register/logic/register_cubit.dart';
 import '../../ForgetPassword/Ui/forget_password_screen.dart';
-import '../../UI/home_ui.dart';
-import '../../utils/routes.dart';
+import '../../core/firebase/firebase_sevice.dart';
+import '../../core/utils/routes.dart';
 import '../logic/login_cubit.dart';
 
 class SigninUi extends StatefulWidget {
@@ -97,7 +94,9 @@ class _SigninUiState extends State<SigninUi> {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  context.read<LoginCubit>().loginWithGoogle();
+                                  context
+                                      .read<LoginCubit>()
+                                      .loginWithGoogle(context);
                                 },
                                 child: Container(
                                   height: 50,
@@ -235,7 +234,7 @@ class _SigninUiState extends State<SigninUi> {
                                   context.read<LoginCubit>().formKey;
                               if (formKey.currentState != null &&
                                   formKey.currentState!.validate()) {
-                                context.read<LoginCubit>().login();
+                                context.read<LoginCubit>().login(context);
                               }
                             },
                             child: Container(

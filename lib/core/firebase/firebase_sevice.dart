@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import '../Profile/model/users_info.dart';
-import '../Sign In/model/login_model.dart';
-import '../register/model/register_model.dart';
+import '../../Profile/model/users_info.dart';
+import '../../Sign In/model/login_model.dart';
+import '../../register/model/register_model.dart';
 import 'firebase_data.dart';
 
 class FirebaseService {

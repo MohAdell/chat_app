@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../Contacts/logic/rooms_cubit.dart';
 import '../../Profile/UI/user_profile_ui.dart';
 import '../../Profile/logic/users_cubit.dart';
-import '../../firebase/firebase_data.dart';
-import '../../utils/routes.dart';
+import '../../core/firebase/firebase_data.dart';
+import '../../core/utils/routes.dart';
 import 'Masseges_Home.dart';
 
 class HomeScreenChat extends StatefulWidget {

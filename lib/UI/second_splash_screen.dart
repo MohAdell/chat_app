@@ -67,7 +67,7 @@ class _SecondSplashScreenState extends State<SecondSplashScreen> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    context.read<RegisterCubit>().registerWithGoogle();
+                    context.read<RegisterCubit>().registerWithGoogle(context);
                   },
                   child: Container(
                     height: 50,

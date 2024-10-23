@@ -1,13 +1,12 @@
-import 'package:chat/Sign%20In/UI/signin_ui.dart';
 import 'package:chat/UI/home_ui.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../core/firebase/firebase_auth.dart';
+import '../../core/firebase/firebase_sevice.dart';
+import '../../core/utils/routes.dart';
 import '../logic/register_cubit.dart';
-import '../../firebase/firebase_auth.dart';
-import '../../firebase/firebase_sevice.dart';
-import '../../utils/routes.dart';
 
 class SignupUi extends StatefulWidget {
   const SignupUi({
